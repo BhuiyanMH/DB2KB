@@ -1,0 +1,572 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix base: <www.example.com/ns#>.
+
+<#TripleMaps1>
+
+	rr:logicalTable [ rr:tableName "actor" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/actor/{actor_id}";
+		rr:class base:actor;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:first_name;
+		rr:objectMap [ rr:column "first_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_name;
+		rr:objectMap [ rr:column "last_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	].
+
+<#TripleMaps2>
+
+	rr:logicalTable [ rr:tableName "address" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/address/{address_id}";
+		rr:class base:address;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:address;
+		rr:objectMap [ rr:column "address" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:address2;
+		rr:objectMap [ rr:column "address2" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:district;
+		rr:objectMap [ rr:column "district" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:postal_code;
+		rr:objectMap [ rr:column "postal_code" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:phone;
+		rr:objectMap [ rr:column "phone" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:city_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "city_id";
+				rr:parent "city_id";
+			];
+		];
+	].
+
+<#TripleMaps3>
+
+	rr:logicalTable [ rr:tableName "category" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/category/{category_id}";
+		rr:class base:category;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:name;
+		rr:objectMap [ rr:column "name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	].
+
+<#TripleMaps4>
+
+	rr:logicalTable [ rr:tableName "city" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/city/{city_id}";
+		rr:class base:city;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:city;
+		rr:objectMap [ rr:column "city" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:country_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "country_id";
+				rr:parent "country_id";
+			];
+		];
+	].
+
+<#TripleMaps5>
+
+	rr:logicalTable [ rr:tableName "country" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/country/{country_id}";
+		rr:class base:country;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:country;
+		rr:objectMap [ rr:column "country" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	].
+
+<#TripleMaps6>
+
+	rr:logicalTable [ rr:tableName "customer" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/customer/{customer_id}";
+		rr:class base:customer;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:store_id;
+		rr:objectMap [ rr:column "store_id" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:first_name;
+		rr:objectMap [ rr:column "first_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_name;
+		rr:objectMap [ rr:column "last_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:email;
+		rr:objectMap [ rr:column "email" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:activebool;
+		rr:objectMap [ rr:column "activebool" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:create_date;
+		rr:objectMap [ rr:column "create_date" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:active;
+		rr:objectMap [ rr:column "active" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:address_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "address_id";
+				rr:parent "address_id";
+			];
+		];
+	].
+
+<#TripleMaps7>
+
+	rr:logicalTable [ rr:tableName "film" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/film/{film_id}";
+		rr:class base:film;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:title;
+		rr:objectMap [ rr:column "title" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:description;
+		rr:objectMap [ rr:column "description" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:release_year;
+		rr:objectMap [ rr:column "release_year" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:rental_duration;
+		rr:objectMap [ rr:column "rental_duration" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:rental_rate;
+		rr:objectMap [ rr:column "rental_rate" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:length;
+		rr:objectMap [ rr:column "length" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:replacement_cost;
+		rr:objectMap [ rr:column "replacement_cost" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:rating;
+		rr:objectMap [ rr:column "rating" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:special_features;
+		rr:objectMap [ rr:column "special_features" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:fulltext;
+		rr:objectMap [ rr:column "fulltext" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:language_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "language_id";
+				rr:parent "language_id";
+			];
+		];
+	].
+
+<#TripleMaps8>
+
+	rr:logicalTable [ rr:tableName "film_actor" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/film_actor/actor_id={actor_id}/film_id={film_id}";
+		rr:class base:film_actorbase:film_actor;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:actor_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "actor_id";
+				rr:parent "actor_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:film_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "film_id";
+				rr:parent "film_id";
+			];
+		];
+	].
+
+<#TripleMaps9>
+
+	rr:logicalTable [ rr:tableName "film_category" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/film_category/film_id={film_id}/category_id={category_id}";
+		rr:class base:film_categorybase:film_category;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:category_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "category_id";
+				rr:parent "category_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:film_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "film_id";
+				rr:parent "film_id";
+			];
+		];
+	].
+
+<#TripleMaps10>
+
+	rr:logicalTable [ rr:tableName "inventory" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/inventory/{inventory_id}";
+		rr:class base:inventory;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:store_id;
+		rr:objectMap [ rr:column "store_id" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:film_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "film_id";
+				rr:parent "film_id";
+			];
+		];
+	].
+
+<#TripleMaps11>
+
+	rr:logicalTable [ rr:tableName "language" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/language/{language_id}";
+		rr:class base:language;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:name;
+		rr:objectMap [ rr:column "name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	].
+
+<#TripleMaps12>
+
+	rr:logicalTable [ rr:tableName "payment" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/payment/{payment_id}";
+		rr:class base:payment;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:amount;
+		rr:objectMap [ rr:column "amount" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:payment_date;
+		rr:objectMap [ rr:column "payment_date" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:customer_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "customer_id";
+				rr:parent "customer_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:rental_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "rental_id";
+				rr:parent "rental_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:staff_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "staff_id";
+				rr:parent "staff_id";
+			];
+		];
+	].
+
+<#TripleMaps13>
+
+	rr:logicalTable [ rr:tableName "rental" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/rental/{rental_id}";
+		rr:class base:rental;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:rental_date;
+		rr:objectMap [ rr:column "rental_date" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:return_date;
+		rr:objectMap [ rr:column "return_date" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:customer_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "customer_id";
+				rr:parent "customer_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:inventory_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "inventory_id";
+				rr:parent "inventory_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:staff_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "staff_id";
+				rr:parent "staff_id";
+			];
+		];
+	].
+
+<#TripleMaps14>
+
+	rr:logicalTable [ rr:tableName "staff" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/staff/{staff_id}";
+		rr:class base:staff;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:first_name;
+		rr:objectMap [ rr:column "first_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_name;
+		rr:objectMap [ rr:column "last_name" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:email;
+		rr:objectMap [ rr:column "email" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:store_id;
+		rr:objectMap [ rr:column "store_id" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:active;
+		rr:objectMap [ rr:column "active" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:username;
+		rr:objectMap [ rr:column "username" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:password;
+		rr:objectMap [ rr:column "password" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:picture;
+		rr:objectMap [ rr:column "picture" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:address_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "address_id";
+				rr:parent "address_id";
+			];
+		];
+	].
+
+<#TripleMaps15>
+
+	rr:logicalTable [ rr:tableName "store" ];
+
+	rr:subjectMap [ 
+		rr:template "www.example.com/store/{store_id}";
+		rr:class base:store;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicateMap base:last_update;
+		rr:objectMap [ rr:column "last_update" ];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:address_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "address_id";
+				rr:parent "address_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap base:manager_staff_id;
+		rr:objectMap [
+			rr:parentTriplesMap null;
+			rr:joinCondition [
+
+				rr:child "manager_staff_id";
+				rr:parent "staff_id";
+			];
+		];
+	].
+
+

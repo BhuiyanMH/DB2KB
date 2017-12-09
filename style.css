@@ -1,0 +1,25 @@
+node.value {
+	fill-color: #64ffda;
+	shape: box;
+	padding: 5px;
+	size-mode: fit;
+}
+
+node {
+	fill-color: #90caf9;
+	text-size:12px;
+	stroke-mode: plain;
+	size: 400px, 100px;
+}
+
+edge {
+	text-size:12px;
+	text-color: red;
+	text-alignment: under;
+	arrow-shape: arrow;
+	shape: cubic-curve;
+}
+
+edge.matched {
+	stroke-mode: dots;
+}
